@@ -11,6 +11,7 @@ import { TransactionList } from './components/TransactionList';
 import { AddTransactionModal } from './components/AddTransactionModal';
 import { AnalyticsView } from './components/AnalyticsView';
 import { LearnView } from './components/LearnView';
+import { OptionsView } from './components/OptionsView';
 import { SmartBudgetCard } from './components/SmartBudgetCard';
 import { calculateBudgetMetrics } from './utils/budget';
 import { haptic } from './utils/haptics';
@@ -98,7 +99,7 @@ export default function App() {
             setIsModalOpen(true);
           }}
           aria-label="Додати операцію"
-          className="h-10 px-3.5 rounded-xl bg-sky-300 text-slate-950 font-bold text-xs flex items-center gap-1.5 active:scale-95 transition-all shadow-lg shadow-sky-950/30"
+          className="h-11 min-w-11 px-3 rounded-full bg-sky-300 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 active:scale-95 transition-all shadow-lg shadow-sky-950/30 border-2 border-sky-100/20"
         >
           <Plus className="w-4 h-4 stroke-[2.5]" />
           <span>Додати</span>
@@ -158,13 +159,12 @@ export default function App() {
         )}
 
         {activeTab === 'settings' && (
-          <div className="p-6 rounded-3xl bg-[#10141f] border border-[#1e2638] text-center py-12 space-y-2 animate-tab-enter shadow-xl">
-            <Settings className="w-8 h-8 mx-auto text-[#818ea3] stroke-2" />
-            <h3 className="font-bold text-sm text-[#f1f5f9]">Параметри системи</h3>
-            <p className="text-xs text-[#818ea3] max-w-xs mx-auto leading-relaxed">
-              Автономне збереження даних у локальній базі браузера без передачі стороннім серверам.
-            </p>
-          </div>
+          <OptionsView
+            monthlyLimit={monthlyLimit}
+            onUpdateLimit={setMonthlyLimit}
+            transactionCount={transactions.length}
+            onResetTransactions={() => setTransactions([])}
+          />
         )}
       </main>
 

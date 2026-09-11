@@ -57,6 +57,12 @@ export const LearnView: React.FC = () => {
 
   return (
     <div className="space-y-4">
+      <div className="learn-hero rounded-3xl p-5 border border-sky-300/15">
+        <div className="flex items-start justify-between gap-4">
+          <div><span className="eyebrow">Фінансова грамотність</span><h2 className="text-xl font-bold text-slate-100 mt-2">Вчіться керувати грошима</h2><p className="text-xs text-slate-400 mt-1 leading-relaxed">Короткі модулі, які допомагають приймати сильні фінансові рішення.</p></div>
+          <Award className="w-6 h-6 text-sky-300 shrink-0" />
+        </div>
+      </div>
       {/* Індикатор прогресу */}
       <div className="flex items-center justify-between p-3 bg-[#131720] border border-[#212836] rounded-xl">
         <div className="text-xs text-[#818ea3]">
