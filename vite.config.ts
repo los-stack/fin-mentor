@@ -13,15 +13,15 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: {
-        enabled: true 
+        enabled: true,
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'pwa-192x192.png', 'pwa-512x512.png'],
       manifest: {
         name: 'FinMentor • Фінансовий трекер',
         short_name: 'FinMentor',
         description: 'Мінімалістичний трекер капіталу та мікро-навчання',
-        theme_color: '#0b0d11',
-        background_color: '#0b0d11',
+        theme_color: '#080a0f',
+        background_color: '#080a0f',
         display: 'standalone',
         orientation: 'portrait',
         start_url: '/',
@@ -43,9 +43,6 @@ export default defineConfig({
             purpose: 'any maskable'
           }
         ]
-      },
-      workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}']
       }
     })
   ]

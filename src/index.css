@@ -3,20 +3,17 @@
 :root {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   letter-spacing: -0.015em;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'tnum';
 
-  --bg-app: #0b0d11;
-  --bg-card: #131720;
-  --bg-card-elevated: #1a202c;
-  --border-subtle: #212836;
-  --border-highlight: #2e384d;
+  --bg-app: #080a0f;
+  --bg-surface: #10141f;
+  --bg-surface-elevated: #181f30;
+  --border-subtle: #1e2638;
+  --border-focus: #2d3b57;
   
-  --text-main: #f1f5f9;
-  --text-muted: #818ea3;
-  --text-dim: #4f5a6d;
-
   --accent-cyan: #38bdf8;
-  --accent-income: #34d399;
-  --accent-expense: #fb7185;
+  --accent-mint: #34d399;
+  --accent-rose: #fb7185;
 }
 
 .pt-safe {
@@ -27,6 +24,15 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 html, body, #root {
   height: 100%;
   width: 100%;
@@ -34,7 +40,22 @@ html, body, #root {
   padding: 0;
   overflow-x: hidden;
   background-color: var(--bg-app);
-  color: var(--text-main);
+  color: #f1f5f9;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-tab-enter {
+  animation: fadeInScale 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
