@@ -64,11 +64,11 @@ export const TransactionList: React.FC<Props> = ({ transactions, onDelete }) => 
         <div key={dateKey} className="space-y-2">
           {/* Дата-роздільник */}
           <div className="flex items-center justify-between px-1">
-            <span className="text-[11px] font-bold tracking-wider text-[#818ea3] uppercase">
+            <span className="text-[11px] font-bold tracking-wider text-slate-400 uppercase">
               {formatGroupDate(dateKey)}
             </span>
-            <span className="text-[10px] font-mono text-[#4a5568]">
-              {grouped[dateKey].length} оп.
+            <span className="text-[10px] font-medium text-slate-600">
+              {grouped[dateKey].length} {grouped[dateKey].length === 1 ? 'операція' : 'операції'}
             </span>
           </div>
 

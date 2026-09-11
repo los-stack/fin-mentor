@@ -47,7 +47,7 @@ export const SmartBudgetCard: React.FC<Props> = ({ metrics, onUpdateLimit }) => 
   }[metrics.status];
 
   return (
-    <div className="relative rounded-3xl bg-[#10141f] border border-[#1e2638] p-5 shadow-2xl overflow-hidden transition-all">
+    <div className="relative rounded-[1.75rem] bg-[#11161e] border border-white/[0.08] p-5 shadow-2xl shadow-black/20 overflow-hidden transition-all">
       {/* Світловий градієнтний бекдроп */}
       <div className={`absolute inset-0 bg-linear-to-br ${statusConfig.glow} pointer-events-none`} />
 

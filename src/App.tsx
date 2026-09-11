@@ -82,22 +82,26 @@ export default function App() {
   return (
     <div className="min-h-screen max-w-md mx-auto flex flex-col bg-[#080a0f] text-[#f1f5f9] relative">
       {/* Header */}
-      <header className="pt-safe px-5 py-4 flex items-center justify-between border-b border-[#1e2638] bg-[#080a0f]/80 backdrop-blur-2xl sticky top-0 z-10">
-        <div>
-          <span className="text-[10px] font-bold tracking-[0.2em] text-[#38bdf8] uppercase">
-            OBSIDIAN • LUXURY
-          </span>
-          <h1 className="text-lg font-bold tracking-tight text-[#f1f5f9]">Мій Капітал</h1>
+      <header className="pt-safe px-5 py-4 flex items-center justify-between border-b border-white/[0.06] bg-[#0a0d12]/90 backdrop-blur-2xl sticky top-0 z-10">
+        <div className="flex items-center gap-3">
+          <div className="h-9 w-9 rounded-xl bg-sky-400/10 border border-sky-300/15 flex items-center justify-center">
+            <Wallet className="w-4 h-4 text-sky-300" />
+          </div>
+          <div>
+            <span className="text-[10px] font-semibold tracking-[0.16em] text-slate-500 uppercase">FinMentor</span>
+            <h1 className="text-[17px] font-bold tracking-tight text-slate-100">Мій капітал</h1>
+          </div>
         </div>
-        <button 
+        <button
           onClick={() => {
             haptic.light();
             setIsModalOpen(true);
           }}
-          className="h-9 px-3.5 rounded-xl bg-[#181f30] hover:bg-[#202940] border border-[#26324a] text-[#38bdf8] font-bold text-xs flex items-center gap-1.5 active:scale-95 transition-all shadow-sm"
+          aria-label="Додати операцію"
+          className="h-10 px-3.5 rounded-xl bg-sky-300 text-slate-950 font-bold text-xs flex items-center gap-1.5 active:scale-95 transition-all shadow-lg shadow-sky-950/30"
         >
-          <Plus className="w-4 h-4 text-[#38bdf8] stroke-2" />
-          <span>Запис</span>
+          <Plus className="w-4 h-4 stroke-[2.5]" />
+          <span>Додати</span>
         </button>
       </header>
 

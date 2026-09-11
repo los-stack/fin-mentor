@@ -9,10 +9,8 @@ import {
 import type { Transaction, Category } from '../types';
 
 interface Props {
-  transactions: transactionsProps[];
+  transactions: Transaction[];
 }
-
-interface transactionsProps extends Transaction {}
 
 const CATEGORY_NAMES: Record<Category, string> = {
   food: 'Їжа та продукти',

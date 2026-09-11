@@ -5,15 +5,14 @@
   letter-spacing: -0.015em;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'tnum';
 
-  --bg-app: #080a0f;
-  --bg-surface: #10141f;
-  --bg-surface-elevated: #181f30;
-  --border-subtle: #1e2638;
-  --border-focus: #2d3b57;
-  
-  --accent-cyan: #38bdf8;
-  --accent-mint: #34d399;
-  --accent-rose: #fb7185;
+  --bg-app: #0a0d12;
+  --bg-surface: #11161e;
+  --bg-surface-elevated: #18212d;
+  --border-subtle: rgba(148, 163, 184, 0.12);
+  --border-focus: rgba(125, 211, 252, 0.45);
+  --accent-cyan: #7dd3fc;
+  --accent-mint: #6ee7b7;
+  --accent-rose: #fda4af;
 }
 
 .pt-safe {
