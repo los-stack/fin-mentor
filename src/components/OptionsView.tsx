@@ -1,14 +1,17 @@
 import React from 'react';
-import { Download, Moon, RotateCcw, SlidersHorizontal, Sparkles, Trash2 } from 'lucide-react';
+import { Download, Moon, RotateCcw, SlidersHorizontal, Sparkles, Trash2, Sun, LogOut } from 'lucide-react';
 
 interface Props {
   monthlyLimit: number;
   onUpdateLimit: (value: number) => void;
   transactionCount: number;
   onResetTransactions: () => void;
+  theme: 'dark' | 'light';
+  onThemeChange: (theme: 'dark' | 'light') => void;
+  onSignOut: () => void;
 }
 
-export const OptionsView: React.FC<Props> = ({ monthlyLimit, onUpdateLimit, transactionCount, onResetTransactions }) => {
+export const OptionsView: React.FC<Props> = ({ monthlyLimit, onUpdateLimit, transactionCount, onResetTransactions, theme, onThemeChange, onSignOut }) => {
   const exportData = () => {
     const payload = {
       exportedAt: new Date().toISOString(),
@@ -50,7 +53,7 @@ export const OptionsView: React.FC<Props> = ({ monthlyLimit, onUpdateLimit, tran
 
       <section className="settings-section">
         <div className="section-heading"><Moon className="w-4 h-4 text-sky-300" /><span>Вигляд</span></div>
-        <div className="settings-row"><span><strong>Темна тема</strong><small>Комфортний режим для щоденного використання</small></span><span className="status-pill">Увімкнено</span></div>
+        <button className="settings-row theme-toggle" onClick={() => onThemeChange(theme === 'dark' ? 'light' : 'dark')}><span><strong>{theme === 'dark' ? 'Темна тема' : 'Світла тема'}</strong><small>Перемикайте вигляд під свій ритм</small></span><span className="theme-switch"><span className="theme-switch-knob">{theme === 'dark' ? <Moon size={12}/> : <Sun size={12}/>}</span></span></button>
       </section>
 
       <section className="settings-section">
@@ -59,7 +62,8 @@ export const OptionsView: React.FC<Props> = ({ monthlyLimit, onUpdateLimit, tran
         <button className="settings-action danger" onClick={resetData}><span><strong>Очистити журнал</strong><small>Видалити всі збережені операції</small></span><Trash2 className="w-4 h-4 text-rose-300/70" /></button>
       </section>
 
-      <div className="flex items-center justify-center gap-2 text-[10px] text-slate-600 pt-1"><RotateCcw className="w-3 h-3" /> Дані зберігаються локально на цьому пристрої</div>
+      <button className="settings-action signout" onClick={onSignOut}><span><strong>Вийти з акаунта</strong><small>Сесія буде завершена на цьому пристрої</small></span><LogOut className="w-4 h-4 text-slate-500" /></button>
+      <div className="flex items-center justify-center gap-2 text-[10px] text-slate-600 pt-1"><RotateCcw className="w-3 h-3" /> Дані зберігаються у вашому акаунті</div>
     </div>
   );
 };
